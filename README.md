@@ -25,6 +25,7 @@
 
 ### 代码结构解析
     while(dead_lock == 1): #当发生死锁退出时，应该重新进行一轮调度
+        ##初始化一些数据结构
         while(Still_have_cars(Path, Carport_temp, Carport) and dead_lock != 1): #当路上仍然有车的时候并且没有死锁继续调度
             T = T + 1      #时间片+1
             Dispatch_cars(Path, Map, Road, Distance, Cross)  #把所有车辆状态初始化为0，确定车辆的转向
