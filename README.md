@@ -21,5 +21,16 @@
 
 ### 代码结构解析
     while(dead_lock == 1): #当发生死锁退出时，应该重新进行一轮调度
-      while(Still_have_cars(Path, Carport_temp, Carport) and dead_lock != 1):
-
+        while(Still_have_cars(Path, Carport_temp, Carport) and dead_lock != 1): #当路上仍然有车的时候并且没有死锁继续调度
+            T = T + 1      #时间片+1
+            Dispatch_cars(Path, Map, Road, Distance, Cross)  #把所有车辆状态初始化为0，确定车辆的转向
+            Look_all_driveway(Path, Road, Map)  #该步骤处理道路内的车
+            while(Do_not_process_all_cars(Path)): #当没有处理完所有车，需要循环处理每一个路口
+                dead_lock = Look_all_cross(Path, Cross, Map, Road, T) #处理要过马路的车，若发生死锁返回1
+                if(dead_lock):
+                    print("dead lock happen at " + str(T) + ", " + str(len(have_stated_car)) + " cars have start" + str(count_car(Path)))
+                    process_dead_lock(Path, have_stated_car, possible_path, T, Carport_total) #处理死锁，并开始新一轮的调度
+                    break
+            if(count_car(Path) < 2000):   #路上车数目小于2000，开始放车，先放速度快的车
+                Put_car_in_carport(Carport, Carport_temp, T, car_v_record)
+                Look_all_carport(Carport, Path, 5000, T, Map, Distance, Road, have_stated_car, car_v_record)
