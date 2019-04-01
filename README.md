@@ -2,6 +2,10 @@
 ### <a href = "https://codecraft.huawei.com/Generaldetail">赛题介绍</a>
 ### 队伍名称：TestNWPU
 ### 队员:高轶群，曹悦
+./src/CodeCraft-2019.py 是调度代码
+./data/ 存放着数据
+运行方式：python3 CodeCraft-2019.py ../data/1-map-exam-1/car.txt ../data/1-map-exam-1/cross.txt ../data/1-map-exam-1/road.txt ../data/1-map-exam-1/answer.txt
+上传的这一版代码最终分数是3400。
 ### 整体思路
 ### 1.车辆路径选择问题
 
