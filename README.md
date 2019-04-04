@@ -6,6 +6,7 @@
         ./data/ 存放着数据
         运行方式：python3 CodeCraft-2019.py ../data/1-map-exam-1/car.txt ../data/1-map-exam-1/road.txt ../data/1-map-exam-1/cross.txt ../data/1-map-exam-1/answer.txt
         上传的这一版代码最终分数是3400。
+### <a href = "https://github.com/yue1272933238/2019-HuaWeiCompetition"> 还有一个我队友写的版本，注释更多，整体思路都是一致的，只是数据结构略有不同</a>
 ### 整体思路
 ### 1.车辆路径选择问题
 
